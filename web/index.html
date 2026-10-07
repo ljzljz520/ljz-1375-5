@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>边城服饰数字展 · Border City Attire</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="offline-banner" id="offlineBanner">
+  离线模式：正在显示已收藏/已访问页面的已发布快照（v<span id="offlineVer">–</span>），
+  重新联网后将自动更新。
+</div>
+<header class="site">
+  <h1>边城服饰数字展</h1>
+  <nav>
+    <a href="#/">展厅</a>
+    <a href="#/motifs">纹样总览</a>
+    <a href="editor.html">编辑台</a>
+  </nav>
+  <span style="flex:1"></span>
+  <span class="lang-toggle" role="group" aria-label="语言">
+    <button data-lang="zh" class="on">中文</button>
+    <button data-lang="en">EN</button>
+  </span>
+</header>
+<main class="wrap" id="app"><p class="muted">载入中…</p></main>
+<div class="toast" id="toast"></div>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>

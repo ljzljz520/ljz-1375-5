@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <rect width="1000" height="700" fill="#e9e2d2"/>
+  <path d="M120 120 q380 -60 760 0 v460 q-380 60 -760 0 Z" fill="#22304a"/>
+  <g stroke="#f4ead5" stroke-width="6" fill="none">
+    <path d="M140 520 q360 56 720 0 M140 560 q360 56 720 0"/>
+  </g>
+  <text x="380" y="360" fill="#f4ead5" font-family="serif" font-size="40">袖口残件全形</text>
+</svg>

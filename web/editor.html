@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>编辑台 · 边城服饰数字展</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<header class="site">
+  <h1>编辑台</h1>
+  <nav><a href="index.html#/">返回公开站</a></nav>
+  <span style="flex:1"></span><span class="muted" id="ver" style="color:#e7dcc4"></span>
+</header>
+<main class="wrap">
+  <div class="tabs" id="tabs">
+    <button data-tab="queue" class="active">审校队列</button>
+    <button data-tab="statement">新增解释</button>
+    <button data-tab="sources">来源管理/撤回</button>
+    <button data-tab="appellation">地区称呼改版</button>
+    <button data-tab="media">借出·拍摄许可·媒体任务</button>
+  </div>
+  <div id="tab-queue"></div>
+  <div id="tab-statement" hidden></div>
+  <div id="tab-sources" hidden></div>
+  <div id="tab-appellation" hidden></div>
+  <div id="tab-media" hidden></div>
+  <p class="muted" style="margin-top:20px">
+    发布采用多来源陈述模型：同一纹样的不同语境解释独立成行，可标记争议与审校结论；
+    编辑批准后点“统一发布”，搜索索引与展品详情在同一版本中更新，旧索引立即删除受限解释。</p>
+</main>
+<div class="toast" id="toast"></div>
+<script src="editor.js"></script>
+</body>
+</html>
