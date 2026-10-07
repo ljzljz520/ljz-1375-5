@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>展品详情</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site"><h1>展品详情</h1><nav><a href="/">返回展览</a><a href="/editor.html">编辑后台</a></nav></header>
+<main id="main">
+  <p><a href="/">← 返回列表</a></p>
+  <div id="offlineBanner" hidden style="background:#f3e6d2;padding:8px 12px;border-radius:8px">您正在离线浏览：显示已收藏时缓存的文字内容；受限图片不显示。</div>
+  <div class="filters" id="scopeBar" hidden>
+  <select id="scopeRegion" aria-label="解释地区筛选"><option value="">全部地区</option></select>
+  <label class="muted">解释年代 <input id="scopeStart" type="number" placeholder="起" style="width:80px"> –
+    <input id="scopeEnd" type="number" placeholder="止" style="width:80px"></label>
+  <select id="scopeMode" aria-label="年代匹配">
+    <option value="overlap">范围相交</option><option value="contain">完全包含</option>
+  </select>
+  <button id="scopeApply" class="primary">按范围筛选解释</button>
+  <button id="scopeClear" class="ghost">清除</button>
+</div>
+<article id="detail"></article>
+</main>
+
+<dialog id="detailDialog" aria-label="细节图查看器">
+  <div class="detail-wrap">
+    <div class="detail-img" id="detailImg"></div>
+    <div class="detail-panel">
+      <strong id="detailLabel"></strong>
+      <p class="muted" id="detailHint">Enter 打开 · ←/→ 切换标注 · Esc 关闭</p>
+      <button id="closeDetail" class="ghost">关闭 (Esc)</button>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="/exhibit.js"></script>
+</body>
+</html>

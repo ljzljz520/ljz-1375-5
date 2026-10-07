@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>边城服饰数字展</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site">
+  <h1>边城服饰数字展</h1>
+  <nav>
+    <a href="/">展览</a>
+    <a href="/editor.html">编辑后台</a>
+  </nav>
+</header>
+<main id="main">
+  <p class="muted">每一种解释都是带「地区 · 年代 · 具体来源」的陈述；相似纹样在不同语境的含义分条并列，争议保留审校结论。</p>
+  <div class="filters" role="search">
+    <input id="q" type="search" placeholder="搜索纹样、称呼、来源、地名（含旧称）…" aria-label="搜索" size="34">
+    <select id="fType" aria-label="展品类型">
+      <option value="">全部类型</option>
+      <option value="historical">历史实物</option>
+      <option value="stage_reconstruction">舞台复原</option>
+      <option value="contemporary_daily">当代日常</option>
+    </select>
+    <select id="fRegion" aria-label="地区"><option value="">全部地区</option></select>
+    <label class="muted">年代
+      <input id="fStart" type="number" placeholder="起" aria-label="年代起" style="width:80px"> –
+      <input id="fEnd" type="number" placeholder="止" aria-label="年代止" style="width:80px">
+    </label>
+    <select id="fEraMode" aria-label="年代匹配方式">
+      <option value="overlap">范围相交</option>
+      <option value="contain">完全包含</option>
+    </select>
+    <label class="muted"><input type="checkbox" id="fOnSite"> 仅现场可见</label>
+    <button class="primary" id="btnSearch">筛选</button>
+  </div>
+  <p id="searchMeta" class="pubmeta" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

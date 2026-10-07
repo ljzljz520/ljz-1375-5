@@ -1,0 +1,13 @@
+{
+  "name": "biancheng-costume-exhibit",
+  "version": "1.0.0",
+  "description": "边城服饰数字展：多来源陈述模型的服饰纹样数字展览系统",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node scripts/seed.js --write",
+    "test": "node --test test/"
+  },
+  "license": "MIT"
+}

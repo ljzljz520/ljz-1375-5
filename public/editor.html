@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>编辑后台 · 边城服饰数字展</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="site"><h1>编辑后台</h1><nav><a href="/">返回展览</a></nav></header>
+<main>
+  <div class="field">
+    <label for="token">编辑令牌（X-Editor）</label>
+    <input id="token" type="password" placeholder="editor-token" size="24">
+    <span class="muted" id="pubVersion"></span>
+    <button class="primary" id="publishBtn">批准后统一发布（搜索 + 详情原子换版）</button>
+  </div>
+
+  <div class="editor-layout">
+    <section>
+      <h2>展品</h2>
+      <ul class="editor-list" id="exList"></ul>
+      <div class="field" id="exOps" hidden>
+        <button id="loanBtn">切换借出状态</button>
+        <button id="photoBtn">切换拍摄许可</button>
+        <button id="detailBtn">新建媒体细节任务</button>
+      </div>
+    </section>
+    <section>
+      <h2>解释陈述（草稿/已批准/已撤回）</h2>
+      <div class="field">
+        <select id="sSubjectType">
+          <option value="motif">纹样</option><option value="exhibit">展品</option>
+          <option value="appellation">称呼</option><option value="occasion">场合</option>
+        </select>
+        <select id="sRegion"></select>
+        <input id="sSubjectId" placeholder="被解释对象 id（如 mf_rhombus）">
+        年代 <input id="sStart" type="number" placeholder="起" style="width:80px">
+             <input id="sEnd" type="number" placeholder="止" style="width:80px">
+        <input id="sSourceTitle" placeholder="具体来源标题（必填）">
+        <input id="sSourceKind" placeholder="来源类型 document/fieldwork/collection_record" value="document">
+        <textarea id="sText" placeholder="中文解释"></textarea>
+        <textarea id="sTextEn" placeholder="英文解释（可空，访客端会回退中文）"></textarea>
+        <label><input type="checkbox" id="sDisputed"> 存在争议</label>
+        <input id="sDisputeNote" placeholder="争议说明（可空）">
+        <button class="primary" id="addStmt">新建陈述（草稿）</button>
+      </div>
+      <ul class="editor-list" id="stmtList" style="max-height:420px"></ul>
+    </section>
+  </div>
+
+  <section class="block">
+    <h2>地区与称呼改版</h2>
+    <select id="rRegion"></select>
+    <input id="rNewName" placeholder="新称呼">
+    <input id="rYear" type="number" placeholder="生效年份" style="width:100px">
+    <input id="rReason" placeholder="改版原因">
+    <button id="renameBtn">改版称呼（旧称保留为曾用名）</button>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="/editor.js"></script>
+</body>
+</html>
